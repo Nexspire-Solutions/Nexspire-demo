@@ -6,122 +6,230 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JWellyy - Luxury Jewelry Collection</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- Animated Gradient Background -->
-    <div class="gradient-bg"></div>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="bg-gradient"></div>
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+    </div>
 
-    <!-- Particle System -->
-    <div class="particles-container" id="particles"></div>
-
-    <!-- Glassmorphic Navigation -->
+    <!-- Navigation -->
     <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <i class="fa-solid fa-gem"></i>
-                <span>JWellyy</span>
+        <div class="container">
+            <a href="#" class="logo">
+                <span class="logo-icon">💎</span>
+                <span class="logo-text">JWellyy</span>
+            </a>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#collection" class="nav-link">Collection</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#collections">Collections</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <button class="cart-btn" id="cartBtn">
-                <i class="fa-solid fa-shopping-bag"></i>
-                <span>Cart</span>
-                <span class="cart-count">0</span>
+            <div class="nav-actions">
+                <button class="btn-icon"><i class="fas fa-search"></i></button>
+                <button class="btn-icon"><i class="fas fa-heart"></i></button>
+                <button class="btn-cart" id="cartBtn">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-badge" id="cartCount">0</span>
+                </button>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span><span></span><span></span>
             </button>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-content">
-            <div class="hero-badge" data-aos="fade-down">
-                <i class="fa-solid fa-sparkles"></i>
-                <span>Luxury Collection 2024</span>
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-label">✨ New Collection 2024</span>
+                <h1 class="hero-title">
+                    Timeless <span class="text-gold">Elegance</span><br>
+                    Crafted in Gold
+                </h1>
+                <p class="hero-desc">Discover our exquisite handcrafted jewelry collection. Each piece tells a unique
+                    story of luxury and sophistication.</p>
+                <div class="hero-buttons">
+                    <a href="#collection" class="btn btn-primary">
+                        <span>Explore Collection</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#about" class="btn btn-outline">Learn More</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-value">15K+</span>
+                        <span class="stat-label">Happy Customers</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-value">500+</span>
+                        <span class="stat-label">Unique Designs</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat">
+                        <span class="stat-value">50+</span>
+                        <span class="stat-label">Awards Won</span>
+                    </div>
+                </div>
             </div>
-            <h1 class="hero-title" data-aos="fade-up" data-aos-delay="200">
-                Timeless <span class="gradient-text">Elegance</span><br>
-                Crafted in Gold
-            </h1>
-            <p class="hero-description" data-aos="fade-up" data-aos-delay="400">
-                Discover our exquisite collection of handcrafted jewelry, where every piece tells a story of luxury and
-                sophistication.
-            </p>
-            <button class="btn-primary" data-aos="fade-up" data-aos-delay="600">
-                <span>Explore Collection</span>
-                <i class="fa-solid fa-arrow-right"></i>
-            </button>
+            <div class="hero-image">
+                <div class="hero-image-wrapper">
+                    <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600&q=80"
+                        alt="Luxury Jewelry">
+                    <div class="hero-image-glow"></div>
+                </div>
+                <div class="floating-card card-1">
+                    <i class="fas fa-gem"></i>
+                    <span>Premium Quality</span>
+                </div>
+                <div class="floating-card card-2">
+                    <i class="fas fa-certificate"></i>
+                    <span>Certified Gold</span>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Collections Section -->
-    <section class="collections" id="collections">
-        <div class="section-header" data-aos="fade-up">
-            <span class="section-label">Our Collections</span>
-            <h2 class="section-title">Exquisite Jewelry</h2>
-            <p class="section-subtitle">Handpicked selection of our finest pieces</p>
-        </div>
+    <!-- Collection Section -->
+    <section class="collection" id="collection">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Our Collection</span>
+                <h2 class="section-title">Exquisite <span class="text-gold">Jewelry</span></h2>
+                <p class="section-desc">Handpicked selection of our finest pieces</p>
+            </div>
 
-        <!-- Filter Buttons -->
-        <div class="filter-buttons" data-aos="fade-up" data-aos-delay="200">
-            <button class="filter-btn active" data-category="all">All</button>
-            <button class="filter-btn" data-category="rings">Rings</button>
-            <button class="filter-btn" data-category="necklaces">Necklaces</button>
-            <button class="filter-btn" data-category="bracelets">Bracelets</button>
-            <button class="filter-btn" data-category="earrings">Earrings</button>
-        </div>
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-category="all">All</button>
+                <button class="filter-btn" data-category="rings">Rings</button>
+                <button class="filter-btn" data-category="necklaces">Necklaces</button>
+                <button class="filter-btn" data-category="bracelets">Bracelets</button>
+                <button class="filter-btn" data-category="earrings">Earrings</button>
+            </div>
 
-        <!-- Products Grid -->
-        <div class="products-grid" id="productsGrid"></div>
+            <div class="products-grid" id="productsGrid"></div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-gem"></i></div>
+                    <h3>Premium Quality</h3>
+                    <p>Only the finest materials and craftsmanship</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-truck"></i></div>
+                    <h3>Free Shipping</h3>
+                    <p>Complimentary delivery on orders over $500</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-undo"></i></div>
+                    <h3>Easy Returns</h3>
+                    <p>30-day hassle-free return policy</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Secure Payment</h3>
+                    <p>Your transactions are always protected</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Cart Sidebar -->
-    <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <aside class="cart-sidebar" id="cartSidebar">
         <div class="cart-header">
-            <h3><i class="fa-solid fa-shopping-bag"></i> Shopping Cart</h3>
-            <button class="close-cart" id="closeCart">
-                <i class="fa-solid fa-times"></i>
-            </button>
+            <h3><i class="fas fa-shopping-bag"></i> Shopping Cart</h3>
+            <button class="btn-close" id="closeCart"><i class="fas fa-times"></i></button>
         </div>
-        <div class="cart-items" id="cartItems">
-            <div class="empty-cart">
-                <i class="fa-solid fa-bag-shopping"></i>
+        <div class="cart-body" id="cartItems">
+            <div class="cart-empty">
+                <i class="fas fa-shopping-bag"></i>
                 <p>Your cart is empty</p>
             </div>
         </div>
         <div class="cart-footer">
             <div class="cart-total">
-                <span>Total:</span>
-                <span class="total-amount">$0.00</span>
+                <span>Total</span>
+                <span class="total-amount" id="cartTotal">$0.00</span>
             </div>
-            <button class="btn-primary btn-full">
-                <span>Checkout</span>
-                <i class="fa-solid fa-arrow-right"></i>
-            </button>
+            <button class="btn btn-primary btn-full">Checkout <i class="fas fa-arrow-right"></i></button>
         </div>
-    </div>
+    </aside>
 
-    <!-- Product Modal -->
-    <div class="modal" id="productModal">
+    <!-- Quick View Modal -->
+    <div class="modal" id="quickViewModal">
         <div class="modal-content">
-            <button class="close-modal" id="closeModal">
-                <i class="fa-solid fa-times"></i>
-            </button>
+            <button class="btn-close modal-close" id="closeModal"><i class="fas fa-times"></i></button>
             <div class="modal-body" id="modalBody"></div>
         </div>
     </div>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <span class="logo-icon">💎</span>
+                        <span class="logo-text">JWellyy</span>
+                    </a>
+                    <p>Crafting timeless elegance since 1990. Every piece tells a story of luxury and sophistication.
+                    </p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="#">About Us</a>
+                    <a href="#">Our Story</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Press</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Customer Care</h4>
+                    <a href="#">Contact Us</a>
+                    <a href="#">Shipping Info</a>
+                    <a href="#">Returns</a>
+                    <a href="#">FAQ</a>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for exclusive offers and updates</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 JWellyy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 

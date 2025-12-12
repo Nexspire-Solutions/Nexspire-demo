@@ -1,223 +1,143 @@
-// Initialize AOS
-AOS.init({
-    duration: 1200,
-    once: true,
-    offset: 100,
-    easing: 'ease-out-cubic'
-});
-
-// Petal Animation
-function createPetals() {
-    const container = document.getElementById('petals');
-    const colors = ['#FFD7D7', '#FFE4E1', '#FFF0F5']; // Shades of soft pink
-
-    setInterval(() => {
-        const petal = document.createElement('div');
-        petal.className = 'petal';
-
-        // Random properties
-        const startLeft = Math.random() * 100;
-        const size = Math.random() * 10 + 10;
-        const color = colors[Math.floor(Math.random() * colors.length)];
-
-        petal.style.left = startLeft + '%';
-        petal.style.width = size + 'px';
-        petal.style.height = size + 'px';
-        petal.style.background = color;
-        petal.style.animationDuration = (Math.random() * 5 + 10) + 's';
-
-        container.appendChild(petal);
-
-        // Cleanup
-        setTimeout(() => petal.remove(), 15000);
-    }, 800);
-}
-
-// Start visual effects
-setTimeout(createPetals, 500);
-
-// Audio Control
-let isPlaying = false;
-// Note: In a real environment we would have an audio file. 
-// For this demo, we verify the toggle functionality works visually.
-function toggleAudio() {
-    const btn = document.getElementById('audioToggle');
-    const icon = btn.querySelector('i');
-
-    isPlaying = !isPlaying;
-
-    if (isPlaying) {
-        btn.classList.add('active');
-        icon.className = 'fa-solid fa-volume-high';
-        showNotification('Ambient sounds played');
-    } else {
-        btn.classList.remove('active');
-        icon.className = 'fa-solid fa-volume-off';
-        showNotification('Ambient sounds paused');
-    }
-}
-
-// Data
+// ===== Data =====
 const treatments = [
-    {
-        icon: 'fa-hot-tub-person',
-        title: 'Hydrotherapy',
-        description: 'Healing water treatments to soothe muscles and calm the mind.',
-        duration: '45 mins'
-    },
-    {
-        icon: 'fa-hands-bubbles',
-        title: 'Deep Tissue',
-        description: 'Intensive massage targeting deep muscle layers for tension release.',
-        duration: '60/90 mins'
-    },
-    {
-        icon: 'fa-feather',
-        title: 'Aromatherapy',
-        description: 'Essential oils blended to enhance physical and emotional wellness.',
-        duration: '60 mins'
-    },
-    {
-        icon: 'fa-gem',
-        title: 'Hot Stone',
-        description: 'Smooth, heated stones placed on key points to melt away stress.',
-        duration: '75 mins'
-    },
-    {
-        icon: 'fa-mask-face',
-        title: 'Organic Facial',
-        description: 'Natural ingredients to nourish, cleanse and revitalize your skin.',
-        duration: '50 mins'
-    },
-    {
-        icon: 'fa-yin-yang',
-        title: 'Reiki Healing',
-        description: 'Energy healing technique to restore balance and harmony.',
-        duration: '60 mins'
-    }
+    { icon: '💆', title: 'Signature Massage', desc: 'Our signature full-body massage combining Swedish and deep tissue techniques', duration: '90 min', price: '$149' },
+    { icon: '🌸', title: 'Aromatherapy', desc: 'Therapeutic massage with essential oils for deep relaxation', duration: '60 min', price: '$99' },
+    { icon: '🔥', title: 'Hot Stone Therapy', desc: 'Warm volcanic stones melt away tension and stress', duration: '75 min', price: '$129' },
+    { icon: '✨', title: 'Facial Rejuvenation', desc: 'Luxurious facial with organic products for radiant skin', duration: '60 min', price: '$119' },
+    { icon: '🍃', title: 'Body Wrap', desc: 'Detoxifying wrap with natural herbs and minerals', duration: '90 min', price: '$159' },
+    { icon: '🧘', title: 'Meditation Session', desc: 'Guided meditation for mental clarity and inner peace', duration: '45 min', price: '$59' }
 ];
 
 const packages = [
-    {
-        title: 'Zen Harmony',
-        price: '$180',
-        image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80',
-        features: ['60min Aromatherapy Massage', 'Organic Facial', 'Herbal Tea Ceremony']
-    },
-    {
-        title: 'Royal Indulgence',
-        price: '$290',
-        image: 'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=600&q=80',
-        features: ['90min Hot Stone Massage', 'Full Body Scrub', 'Hydrotherapy Session', 'Spa Lunch']
-    },
-    {
-        title: 'Couples Retreat',
-        price: '$450',
-        image: 'https://images.unsplash.com/photo-1591343395882-a1b0293f30a2?w=600&q=80',
-        features: ['Side-by-side Massage', 'Private Jacuzzi Time', 'Champagne & Fruits', 'Relaxation Lounge']
-    }
+    { title: 'Day of Bliss', price: '$299', image: 'https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=500&q=80', featured: false, features: ['90-min Signature Massage', 'Facial Rejuvenation', 'Aromatherapy Bath', 'Herbal Tea Service'] },
+    { title: 'Ultimate Retreat', price: '$449', image: 'https://images.unsplash.com/photo-1540555700478-4be289fbec66?w=500&q=80', featured: true, badge: 'Most Popular', features: ['Hot Stone Therapy', 'Body Wrap Treatment', 'Facial Rejuvenation', 'Gourmet Lunch', 'Pool Access'] },
+    { title: 'Couples Escape', price: '$549', image: 'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=500&q=80', featured: false, features: ['Couples Massage', 'Private Suite', 'Champagne & Chocolates', 'Aromatherapy', 'Sunset Views'] }
 ];
 
-// Render Treatments
+// ===== DOM Elements =====
 const treatmentsGrid = document.getElementById('treatmentsGrid');
-treatments.forEach((item, index) => {
-    const card = document.createElement('div');
-    card.className = 'treatment-card';
-    card.setAttribute('data-aos', 'fade-up');
-    card.setAttribute('data-aos-delay', index * 100);
-    card.innerHTML = `
-        <i class="fa-solid ${item.icon} treatment-icon"></i>
-        <h3>${item.title}</h3>
-        <p>${item.description}</p>
-        <div class="treatment-duration">${item.duration}</div>
-    `;
-    treatmentsGrid.appendChild(card);
-});
-
-// Render Packages
 const packagesGrid = document.getElementById('packagesGrid');
-packages.forEach((pkg, index) => {
-    const card = document.createElement('div');
-    card.className = 'package-card';
-    card.setAttribute('data-aos', 'fade-up');
-    card.setAttribute('data-aos-delay', index * 100);
+const bookingModal = document.getElementById('bookingModal');
 
-    const featuresList = pkg.features.map(f => `<li><i class="fa-solid fa-leaf"></i> ${f}</li>`).join('');
-
-    card.innerHTML = `
-        <div class="package-image">
-            <img src="${pkg.image}" alt="${pkg.title}">
+// ===== Render Functions =====
+function renderTreatments() {
+    treatmentsGrid.innerHTML = treatments.map((treatment, i) => `
+        <div class="treatment-card" style="animation: fadeIn 0.6s ease ${i * 0.1}s backwards">
+            <div class="treatment-icon">${treatment.icon}</div>
+            <h3>${treatment.title}</h3>
+            <p>${treatment.desc}</p>
+            <div class="treatment-meta">
+                <span><i class="far fa-clock"></i> ${treatment.duration}</span>
+                <span><i class="fas fa-tag"></i> ${treatment.price}</span>
+            </div>
         </div>
-        <div class="package-content">
-            <h3 class="package-title">${pkg.title}</h3>
-            <span class="package-price">${pkg.price}</span>
-            <ul class="package-features">${featuresList}</ul>
-            <button class="btn-primary btn-full" onclick="showBookingModal()">Reserve Package</button>
-        </div>
-    `;
-    packagesGrid.appendChild(card);
-});
+    `).join('');
+}
 
-// Booking Modal Functions
-function showBookingModal() {
-    const modal = document.getElementById('bookingModal');
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden'; // Prevent scrolling
+function renderPackages() {
+    packagesGrid.innerHTML = packages.map((pkg, i) => `
+        <div class="package-card ${pkg.featured ? 'featured' : ''}" style="animation: fadeIn 0.6s ease ${i * 0.15}s backwards">
+            <div class="package-image">
+                <img src="${pkg.image}" alt="${pkg.title}" loading="lazy">
+                ${pkg.badge ? `<span class="package-badge">${pkg.badge}</span>` : ''}
+            </div>
+            <div class="package-content">
+                <h3 class="package-title">${pkg.title}</h3>
+                <div class="package-price">${pkg.price}</div>
+                <ul class="package-features">
+                    ${pkg.features.map(f => `<li><i class="fas fa-check"></i> ${f}</li>`).join('')}
+                </ul>
+                <button class="btn btn-primary btn-full" onclick="openBookingModal()">Book Now</button>
+            </div>
+        </div>
+    `).join('');
+}
+
+// ===== Modal Functions =====
+function openBookingModal() {
+    bookingModal.classList.add('active');
+    document.body.style.overflow = 'hidden';
 }
 
 function closeBookingModal() {
-    const modal = document.getElementById('bookingModal');
-    modal.classList.remove('active');
+    bookingModal.classList.remove('active');
     document.body.style.overflow = '';
 }
 
+bookingModal.addEventListener('click', (e) => {
+    if (e.target === bookingModal) closeBookingModal();
+});
+
+// ===== Form Handler =====
 function handleBooking(e) {
     e.preventDefault();
+    showNotification('Your wellness journey awaits! We\'ll confirm your reservation shortly.');
     closeBookingModal();
-    showNotification('Reservation request sent successfully. We will contact you shortly.');
+    e.target.reset();
 }
 
-// Notification System
+// ===== Notification =====
 function showNotification(message) {
     const notification = document.createElement('div');
     notification.style.cssText = `
         position: fixed;
-        bottom: 30px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: rgba(47, 79, 79, 0.9);
+        top: 100px;
+        right: 24px;
+        padding: 20px 32px;
+        background: linear-gradient(135deg, #7D8F69 0%, #A8B89C 100%);
         color: white;
-        padding: 1rem 2rem;
-        border-radius: 50px;
-        z-index: 10000;
-        font-family: 'Lato', sans-serif;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        animation: fadeIn 0.5s ease;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 15px;
+        z-index: 3000;
+        animation: slideIn 0.5s ease, slideOut 0.5s ease 3.5s forwards;
+        box-shadow: 0 15px 40px rgba(125, 143, 105, 0.35);
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        max-width: 400px;
     `;
-    notification.innerHTML = `<i class="fa-solid fa-check" style="margin-right: 10px;"></i> ${message}`;
-
+    notification.innerHTML = `<i class="fas fa-check-circle" style="font-size: 20px;"></i>${message}`;
     document.body.appendChild(notification);
-
-    // Add fade in animation style if not present
-    if (!document.getElementById('notification-style')) {
-        const style = document.createElement('style');
-        style.id = 'notification-style';
-        style.textContent = `
-            @keyframes fadeIn { from { opacity: 0; transform: translate(-50%, 20px); } to { opacity: 1; transform: translate(-50%, 0); } }
-            @keyframes fadeOut { from { opacity: 1; transform: translate(-50%, 0); } to { opacity: 0; transform: translate(-50%, 20px); } }
-        `;
-        document.head.appendChild(style);
-    }
-
-    setTimeout(() => {
-        notification.style.animation = 'fadeOut 0.5s ease forwards';
-        setTimeout(() => notification.remove(), 500);
-    }, 3000);
+    setTimeout(() => notification.remove(), 4000);
 }
 
-// Close modal on outside click
-document.getElementById('bookingModal').addEventListener('click', (e) => {
-    if (e.target.id === 'bookingModal') closeBookingModal();
+// Add animation styles
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes slideIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
+    @keyframes slideOut { from { transform: translateX(0); opacity: 1; } to { transform: translateX(100%); opacity: 0; } }
+`;
+document.head.appendChild(style);
+
+// ===== Smooth Scroll =====
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    });
 });
 
-console.log('🌿 Serenity Spa loaded successfully');
+// ===== Navbar Scroll Effect =====
+window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+        navbar.style.background = 'rgba(249, 247, 244, 0.98)';
+        navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.06)';
+        navbar.style.padding = '16px 0';
+    } else {
+        navbar.style.background = 'rgba(249, 247, 244, 0.9)';
+        navbar.style.boxShadow = 'none';
+        navbar.style.padding = '20px 0';
+    }
+});
+
+// ===== Initialize =====
+renderTreatments();
+renderPackages();
+
+console.log('🌿 Serenity Spa loaded successfully!');
