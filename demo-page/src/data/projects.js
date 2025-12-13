@@ -57,10 +57,10 @@ export const projects = [
   },
   {
     id: 8,
-    title: "Creative Portfolio",
-    description: "A stunning dark-themed portfolio template with animations, filtering, and responsive design.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop",
-    tags: ["Portfolio", "Dark Theme", "Animated", "Responsive"],
+    title: "FOLIO — Creative Portfolio",
+    description: "A bold, minimal portfolio with editorial layout, custom cursor, and striking black/white design.",
+    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop",
+    tags: ["Portfolio", "Minimal", "Editorial", "Bold"],
     demoUrl: "./demos/portfolio/index.html"
   }
 ];
