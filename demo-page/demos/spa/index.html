@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serenity - Wellness Spa Retreat</title>
+    <title>Serenity - Luxury Wellness Spa Retreat</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap"
         rel="stylesheet">
@@ -13,8 +13,15 @@
 </head>
 
 <body>
+    <!-- Zen Background -->
+    <div class="zen-bg">
+        <div class="zen-circle"></div>
+        <div class="zen-circle"></div>
+        <div class="zen-circle"></div>
+    </div>
+
     <!-- Navigation -->
-    <nav class="nav">
+    <nav class="nav" id="nav">
         <div class="nav-inner">
             <a href="#" class="logo">
                 <span class="logo-leaf">🍃</span>
@@ -26,7 +33,7 @@
                 <li><a href="#packages">Packages</a></li>
                 <li><a href="#classes">Classes</a></li>
             </ul>
-            <button class="nav-btn" onclick="openModal()">Reserve</button>
+            <button class="nav-btn" onclick="openModal()">Reserve Now</button>
         </div>
     </nav>
 
@@ -35,19 +42,20 @@
         <div class="hero-bg"></div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <span class="hero-tag">Wellness & Harmony</span>
+            <span class="hero-tag">Luxury Wellness Retreat</span>
             <h1 class="hero-title">
                 Find Your<br>
                 <span class="text-accent">Inner Peace</span>
             </h1>
-            <p class="hero-desc">Escape the ordinary. Embrace serenity. Our sanctuary awaits to restore your mind, body,
-                and soul through ancient healing traditions.</p>
+            <p class="hero-desc">Escape the ordinary and embrace serenity. Our sanctuary awaits to restore your mind,
+                body, and soul through ancient healing traditions and modern wellness practices.</p>
             <button class="btn btn-light" onclick="openModal()">
                 <span>Begin Your Journey</span>
+                <i class="fas fa-arrow-right"></i>
             </button>
         </div>
         <div class="scroll-indicator">
-            <span>Scroll</span>
+            <span>Explore</span>
             <div class="scroll-line"></div>
         </div>
     </section>
@@ -59,25 +67,27 @@
                 <div class="philosophy-text">
                     <span class="section-tag">Our Philosophy</span>
                     <h2>Ancient Wisdom,<br>Modern Wellness</h2>
-                    <p>We blend traditional healing practices with contemporary techniques to create a transformative
-                        experience for every guest.</p>
+                    <p>We blend traditional healing practices from around the world with contemporary wellness
+                        techniques to create a transformative experience unlike any other. Every treatment is a journey
+                        toward balance and renewal.</p>
                     <div class="philosophy-features">
                         <div class="feature">
                             <i class="fas fa-leaf"></i>
-                            <span>Organic Products</span>
+                            <span>100% Organic<br>Products</span>
                         </div>
                         <div class="feature">
                             <i class="fas fa-hand-holding-heart"></i>
-                            <span>Expert Therapists</span>
+                            <span>Expert<br>Therapists</span>
                         </div>
                         <div class="feature">
                             <i class="fas fa-spa"></i>
-                            <span>Holistic Approach</span>
+                            <span>Holistic<br>Approach</span>
                         </div>
                     </div>
                 </div>
                 <div class="philosophy-image">
-                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80" alt="Spa">
+                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80"
+                        alt="Spa Experience">
                 </div>
             </div>
         </div>
@@ -88,7 +98,7 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Healing Rituals</span>
-                <h2 class="section-title">Our Treatments</h2>
+                <h2 class="section-title">Signature Treatments</h2>
             </div>
             <div class="treatments-timeline" id="treatmentsTimeline"></div>
         </div>
@@ -99,7 +109,7 @@
         <div class="container">
             <div class="section-header">
                 <span class="section-tag">Wellness Journeys</span>
-                <h2 class="section-title">Spa Packages</h2>
+                <h2 class="section-title">Curated Packages</h2>
             </div>
             <div class="packages-grid" id="packagesGrid"></div>
         </div>
@@ -136,7 +146,7 @@
             <div class="modal-header">
                 <span class="logo-leaf">🍃</span>
                 <h3>Reserve Your Sanctuary</h3>
-                <p>Begin your path to relaxation</p>
+                <p>Begin your path to relaxation and renewal</p>
             </div>
             <form class="modal-form" onsubmit="handleBooking(event)">
                 <input type="text" placeholder="Your Name" required>
@@ -144,11 +154,13 @@
                 <input type="tel" placeholder="Phone Number" required>
                 <select required>
                     <option value="">Select Treatment</option>
-                    <option>Signature Massage</option>
-                    <option>Hot Stone Therapy</option>
-                    <option>Aromatherapy</option>
-                    <option>Facial Rejuvenation</option>
-                    <option>Body Wrap</option>
+                    <option>Signature Massage - $149</option>
+                    <option>Hot Stone Therapy - $129</option>
+                    <option>Aromatherapy - $99</option>
+                    <option>Facial Rejuvenation - $119</option>
+                    <option>Body Wrap - $159</option>
+                    <option>Day of Bliss Package - $299</option>
+                    <option>Ultimate Retreat - $449</option>
                 </select>
                 <div class="form-row">
                     <input type="date" required>
@@ -156,6 +168,7 @@
                 </div>
                 <button type="submit" class="btn btn-primary btn-full">
                     <span>Confirm Reservation</span>
+                    <i class="fas fa-check"></i>
                 </button>
             </form>
         </div>
@@ -170,24 +183,26 @@
                         <span class="logo-leaf">🍃</span>
                         <span class="logo-name">Serenity</span>
                     </a>
-                    <p>A sanctuary for mind, body, and soul.</p>
+                    <p>A sanctuary for mind, body, and soul. Experience the art of wellness in our peaceful retreat.</p>
                 </div>
                 <div class="footer-links">
                     <h4>Quick Links</h4>
-                    <a href="#">Treatments</a>
-                    <a href="#">Packages</a>
-                    <a href="#">Classes</a>
+                    <a href="#treatments">Treatments</a>
+                    <a href="#packages">Packages</a>
+                    <a href="#classes">Classes</a>
                     <a href="#">Gift Cards</a>
+                    <a href="#">Membership</a>
                 </div>
                 <div class="footer-contact">
-                    <h4>Contact</h4>
-                    <p><i class="fas fa-map-marker-alt"></i> 789 Wellness Way, CA 90210</p>
+                    <h4>Visit Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 789 Wellness Way, Beverly Hills, CA 90210</p>
                     <p><i class="fas fa-phone"></i> +1 (555) 987-6543</p>
+                    <p><i class="fas fa-envelope"></i> hello@serenityspa.com</p>
                     <p><i class="fas fa-clock"></i> Daily 9AM - 9PM</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 Serenity Spa. All rights reserved.</p>
+                <p>&copy; 2024 Serenity Spa & Wellness. All rights reserved.</p>
             </div>
         </div>
     </footer>

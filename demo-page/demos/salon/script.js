@@ -1,119 +1,280 @@
-// Glamour Salon Data
-const services = [
-    { icon: '✂️', title: 'Haircut & Styling', desc: 'Precision cuts tailored to your face shape and lifestyle', price: 'From $65' },
-    { icon: '🎨', title: 'Hair Coloring', desc: 'Balayage, highlights, ombre, and creative color techniques', price: 'From $150' },
-    { icon: '💄', title: 'Bridal Makeup', desc: 'Flawless looks for your special day with trial included', price: 'From $350' },
-    { icon: '💅', title: 'Nail Artistry', desc: 'Manicure, pedicure, gel, and artistic nail designs', price: 'From $45' },
-    { icon: '✨', title: 'Facial Glow', desc: 'Rejuvenating treatments for radiant, healthy skin', price: 'From $120' },
-    { icon: '💇', title: 'Hair Extensions', desc: 'Premium quality extensions for length and volume', price: 'From $400' }
-];
+// LUXE Salon - Dark Luxury Theme JavaScript
 
-const gallery = [
-    'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80',
-    'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80',
-    'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80',
-    'https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&q=80',
-    'https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=600&q=80',
-    'https://images.unsplash.com/photo-1522335108757-6eee8f2fdb41?w=600&q=80',
-    'https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=600&q=80',
-    'https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=600&q=80'
+// ===== Data =====
+const services = [
+    {
+        number: '01',
+        title: 'HAIR DESIGN',
+        description: 'Precision cuts and transformative styling by internationally trained artists. From classic elegance to avant-garde creations.',
+        price: 'From $150'
+    },
+    {
+        number: '02',
+        title: 'COLOR ART',
+        description: 'Hand-painted balayage, dimensional highlights, and custom color formulations tailored to complement your unique features.',
+        price: 'From $250'
+    },
+    {
+        number: '03',
+        title: 'BRIDAL LUXE',
+        description: 'Complete bridal packages including trials, day-of styling, and touch-up services for your most memorable moments.',
+        price: 'From $500'
+    },
+    {
+        number: '04',
+        title: 'MAKEUP ART',
+        description: 'Red carpet-ready looks using premium luxury products. Perfect for editorial, events, or everyday glamour.',
+        price: 'From $180'
+    },
+    {
+        number: '05',
+        title: 'TREATMENTS',
+        description: 'Restorative keratin treatments, scalp therapies, and deep conditioning rituals for ultimate hair health.',
+        price: 'From $200'
+    },
+    {
+        number: '06',
+        title: 'EXTENSIONS',
+        description: 'Seamless, undetectable hair extensions using 100% virgin Remy hair for natural volume and length.',
+        price: 'From $800'
+    }
 ];
 
 const team = [
-    { name: 'Sophie Martinez', role: 'Creative Director', specialty: 'Color & Styling', image: 'https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=400&q=80' },
-    { name: 'Emma Thompson', role: 'Senior Stylist', specialty: 'Bridal Hair', image: 'https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=400&q=80' },
-    { name: 'Mia Rodriguez', role: 'Color Specialist', specialty: 'Balayage Expert', image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80' },
-    { name: 'Olivia Chen', role: 'Makeup Artist', specialty: 'Bridal & Editorial', image: 'https://images.unsplash.com/photo-1598550880863-4e8aa3d0edb4?w=400&q=80' }
+    {
+        name: 'VICTORIA HART',
+        role: 'Creative Director',
+        image: 'https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=400&q=80'
+    },
+    {
+        name: 'SOPHIA CHEN',
+        role: 'Color Specialist',
+        image: 'https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?w=400&q=80'
+    },
+    {
+        name: 'ISABELLA RUSSO',
+        role: 'Senior Stylist',
+        image: 'https://images.unsplash.com/photo-1595959183082-7b570b7e1dfa?w=400&q=80'
+    },
+    {
+        name: 'EMMA LAURENT',
+        role: 'Makeup Artist',
+        image: 'https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?w=400&q=80'
+    }
 ];
 
-const reviews = [
-    { name: 'Sarah K.', service: 'Hair Coloring', text: 'Sophie did the most gorgeous balayage! People keep asking where I got it done. Absolutely love it!', rating: 5 },
-    { name: 'Jessica M.', service: 'Bridal Makeup', text: 'Emma made me feel like a princess on my wedding day. The trial was perfect and she nailed the look!', rating: 5 },
-    { name: 'Rachel P.', service: 'Haircut', text: 'Best haircut I\'ve ever had. They really listen to what you want and deliver beyond expectations.', rating: 5 }
+const galleryImages = [
+    { src: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80', title: 'BALAYAGE' },
+    { src: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=80', title: 'BRIDAL' },
+    { src: 'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80', title: 'EDITORIAL' },
+    { src: 'https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=600&q=80', title: 'COLOR' },
+    { src: 'https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=600&q=80', title: 'STYLING' },
+    { src: 'https://images.unsplash.com/photo-1562322140-8baeacacf4ad?w=600&q=80', title: 'GLAMOUR' },
+    { src: 'https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?w=600&q=80', title: 'TEXTURE' },
+    { src: 'https://images.unsplash.com/photo-1600948836101-f9ffda59d250?w=600&q=80', title: 'CREATIVE' }
 ];
 
-const instaPosts = [
-    'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=300&q=80',
-    'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=300&q=80',
-    'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=300&q=80',
-    'https://images.unsplash.com/photo-1519699047748-de8e457a634e?w=300&q=80',
-    'https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=300&q=80',
-    'https://images.unsplash.com/photo-1522335108757-6eee8f2fdb41?w=300&q=80'
+const testimonials = [
+    {
+        text: 'LUXE has completely transformed my approach to beauty. The attention to detail and artistry is unmatched. Victoria and her team are true visionaries.',
+        name: 'ALEXANDRA PIERCE',
+        title: 'Fashion Editor, Vogue'
+    },
+    {
+        text: 'I have never felt more confident. The color work Sophia did is absolutely magical — it looks so natural yet elevated. Worth every penny.',
+        name: 'MADISON WELLS',
+        title: 'Celebrity Stylist'
+    },
+    {
+        text: 'My bridal styling was perfection. Isabella understood exactly what I envisioned and exceeded all expectations. The entire team made me feel like royalty.',
+        name: 'CHARLOTTE ROSE',
+        title: 'Bride'
+    }
 ];
 
-// Render Functions
+let currentTestimonial = 0;
+
+// ===== DOM Ready =====
+document.addEventListener('DOMContentLoaded', () => {
+    renderServices();
+    renderTeam();
+    renderGallery();
+    initTestimonials();
+    initCursorGlow();
+    initNavbarScroll();
+    initScrollAnimations();
+});
+
+// ===== Render Functions =====
 function renderServices() {
     const grid = document.getElementById('servicesGrid');
-    grid.innerHTML = services.map((s, i) => `
-        <div class="service-card" style="animation: fadeInUp 0.6s ease ${i * 0.1}s both">
-            <div class="service-icon">${s.icon}</div>
-            <h3>${s.title}</h3>
-            <p>${s.desc}</p>
-            <div class="service-price">${s.price}</div>
-        </div>
-    `).join('');
-}
+    if (!grid) return;
 
-function renderGallery() {
-    const grid = document.getElementById('galleryGrid');
-    grid.innerHTML = gallery.map((img, i) => `
-        <div class="gallery-item" style="animation: fadeIn 0.5s ease ${i * 0.05}s both">
-            <img src="${img}" alt="Gallery ${i + 1}" loading="lazy">
-            <div class="gallery-overlay">
-                <i class="fas fa-expand"></i>
-            </div>
+    grid.innerHTML = services.map((service, index) => `
+        <div class="service-card" style="animation-delay: ${index * 0.1}s">
+            <span class="service-number">${service.number}</span>
+            <h3>${service.title}</h3>
+            <p>${service.description}</p>
+            <span class="service-price">${service.price}</span>
         </div>
     `).join('');
 }
 
 function renderTeam() {
     const grid = document.getElementById('teamGrid');
-    grid.innerHTML = team.map((t, i) => `
-        <div class="team-card" style="animation: fadeInUp 0.6s ease ${i * 0.15}s both">
-            <div class="team-img">
-                <img src="${t.image}" alt="${t.name}" loading="lazy">
+    if (!grid) return;
+
+    grid.innerHTML = team.map((member, index) => `
+        <div class="team-card" style="animation-delay: ${index * 0.1}s">
+            <div class="team-image">
+                <img src="${member.image}" alt="${member.name}">
             </div>
             <div class="team-info">
-                <h4>${t.name}</h4>
-                <div class="team-role">${t.role}</div>
-                <div class="team-specialty">${t.specialty}</div>
-            </div>
-        </div>
-    `).join('');
-}
-
-function renderReviews() {
-    const slider = document.getElementById('reviewsSlider');
-    slider.innerHTML = reviews.map((r, i) => `
-        <div class="review-card" style="animation: fadeInUp 0.6s ease ${i * 0.15}s both">
-            <div class="review-header">
-                <div class="reviewer">
-                    <div class="reviewer-avatar">${r.name.charAt(0)}</div>
-                    <div>
-                        <div class="reviewer-name">${r.name}</div>
-                        <div class="reviewer-service">${r.service}</div>
-                    </div>
+                <h4>${member.name}</h4>
+                <p class="team-role">${member.role}</p>
+                <div class="team-social">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
                 </div>
-                <div class="review-stars">${'★'.repeat(r.rating)}</div>
-            </div>
-            <p class="review-text">"${r.text}"</p>
-        </div>
-    `).join('');
-}
-
-function renderInsta() {
-    const grid = document.getElementById('instaGrid');
-    grid.innerHTML = instaPosts.map(img => `
-        <div class="insta-item">
-            <img src="${img}" alt="Instagram" loading="lazy">
-            <div class="insta-overlay">
-                <i class="fab fa-instagram"></i>
             </div>
         </div>
     `).join('');
 }
 
-// Modal
+function renderGallery() {
+    const grid = document.getElementById('galleryGrid');
+    if (!grid) return;
+
+    grid.innerHTML = galleryImages.map((img, index) => `
+        <div class="gallery-item" style="animation-delay: ${index * 0.05}s">
+            <img src="${img.src}" alt="${img.title}">
+            <div class="gallery-overlay">
+                <span>${img.title}</span>
+            </div>
+        </div>
+    `).join('');
+}
+
+// ===== Testimonials =====
+function initTestimonials() {
+    showTestimonial(0);
+}
+
+function showTestimonial(index) {
+    const textEl = document.querySelector('.testimonial-text');
+    const nameEl = document.querySelector('.author-name');
+    const titleEl = document.querySelector('.author-title');
+
+    if (!textEl) return;
+
+    const testimonial = testimonials[index];
+    textEl.textContent = `"${testimonial.text}"`;
+    nameEl.textContent = testimonial.name;
+    titleEl.textContent = testimonial.title;
+}
+
+function nextTestimonial() {
+    currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+    animateTestimonial(currentTestimonial);
+}
+
+function prevTestimonial() {
+    currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+    animateTestimonial(currentTestimonial);
+}
+
+function animateTestimonial(index) {
+    const content = document.getElementById('testimonialContent');
+    content.style.opacity = 0;
+    content.style.transform = 'translateY(20px)';
+
+    setTimeout(() => {
+        showTestimonial(index);
+        content.style.opacity = 1;
+        content.style.transform = 'translateY(0)';
+    }, 300);
+}
+
+// Add transition styles to testimonial content
+document.addEventListener('DOMContentLoaded', () => {
+    const content = document.getElementById('testimonialContent');
+    if (content) {
+        content.style.transition = 'all 0.4s ease';
+    }
+});
+
+// ===== Cursor Glow Effect =====
+function initCursorGlow() {
+    const cursor = document.getElementById('cursorGlow');
+    if (!cursor || window.innerWidth < 768) return;
+
+    document.addEventListener('mousemove', (e) => {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+
+    document.addEventListener('mouseenter', () => {
+        cursor.style.opacity = '1';
+    });
+
+    document.addEventListener('mouseleave', () => {
+        cursor.style.opacity = '0';
+    });
+}
+
+// ===== Navbar Scroll Effect =====
+function initNavbarScroll() {
+    const navbar = document.querySelector('.navbar');
+
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 100) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+
+    // Smooth scroll for nav links
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const target = document.querySelector(link.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+}
+
+// ===== Scroll Animations =====
+function initScrollAnimations() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.service-card, .team-card, .gallery-item').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(30px)';
+        observer.observe(el);
+    });
+
+    // Add visible state styles
+    const style = document.createElement('style');
+    style.textContent = `
+        .service-card.visible, .team-card.visible, .gallery-item.visible {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+// ===== Modal Functions =====
 function openBooking() {
     document.getElementById('bookingModal').classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -126,24 +287,31 @@ function closeBooking() {
 
 function handleBooking(e) {
     e.preventDefault();
-    alert('Booking confirmed! We\'ll send you a confirmation shortly.');
-    closeBooking();
-    e.target.reset();
+
+    const form = e.target;
+    const originalContent = form.innerHTML;
+
+    form.innerHTML = `
+        <div style="text-align: center; padding: 48px 0;">
+            <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #8B5CF6, #EC4899); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 28px; font-size: 32px; color: white;">
+                <i class="fas fa-check"></i>
+            </div>
+            <h3 style="font-family: 'Bebas Neue', sans-serif; font-size: 28px; letter-spacing: 4px; margin-bottom: 12px;">BOOKING CONFIRMED</h3>
+            <p style="color: #666; margin-bottom: 28px; font-size: 14px;">We'll send you a confirmation email with all the details.</p>
+            <button type="button" class="btn btn-primary" onclick="closeBooking()">
+                <span>DONE</span>
+            </button>
+        </div>
+    `;
+
+    setTimeout(() => {
+        form.innerHTML = originalContent;
+    }, 5000);
 }
 
-// Animation Styles
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-`;
-document.head.appendChild(style);
-
-// Init
-renderServices();
-renderGallery();
-renderTeam();
-renderReviews();
-renderInsta();
-
-console.log('✨ Glamour Salon loaded!');
+// Close modal on escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeBooking();
+    }
+});

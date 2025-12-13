@@ -4,93 +4,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MediCare - Advanced Medical Center</title>
+    <title>MediCare+ | Advanced Medical Excellence</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="bg-gradient"></div>
+        <div class="floating-orbs">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+            <div class="orb orb-4"></div>
+        </div>
+        <div class="grid-lines"></div>
+        <div class="particles" id="particles"></div>
+    </div>
+
     <!-- Navigation -->
-    <nav class="nav">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <div class="brand-icon">
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <div class="logo-icon">
                     <i class="fas fa-heartbeat"></i>
+                    <span class="pulse-ring"></span>
                 </div>
-                <span class="brand-text">MediCare</span>
+                <span class="logo-text">MediCare<span class="plus">+</span></span>
+            </a>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#services" class="nav-link">Services</a>
+                <a href="#doctors" class="nav-link">Doctors</a>
+                <a href="#departments" class="nav-link">Departments</a>
             </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#doctors">Doctors</a></li>
-                <li><a href="#departments">Departments</a></li>
-            </ul>
-            <button class="btn-emergency" onclick="openAppointmentModal()">
-                <i class="fas fa-phone-alt"></i>
-                <span>Emergency</span>
+            <div class="nav-actions">
+                <a href="tel:911" class="emergency-btn">
+                    <span class="emergency-pulse"></span>
+                    <i class="fas fa-phone-alt"></i>
+                    <span>Emergency</span>
+                </a>
+                <button class="btn-appointment" onclick="openAppointmentModal()">
+                    <span>Book Now</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <span></span><span></span><span></span>
             </button>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
-        <div class="hero-content">
-            <div class="hero-badge">
-                <span class="badge-dot"></span>
-                <span>24/7 Emergency Care Available</span>
-            </div>
-            <h1 class="hero-title">
-                Your Health,<br>
-                <span class="gradient-text">Our Mission</span>
-            </h1>
-            <p class="hero-text">Experience world-class healthcare with cutting-edge technology and compassionate
-                medical professionals dedicated to your wellbeing.</p>
-            <div class="hero-buttons">
-                <button class="btn btn-primary" onclick="openAppointmentModal()">
-                    <span>Book Appointment</span>
-                    <i class="fas fa-arrow-right"></i>
-                </button>
-                <button class="btn btn-glass">
-                    <i class="fas fa-play"></i>
-                    <span>Watch Tour</span>
-                </button>
-            </div>
-            <!-- Stats Cards -->
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number" data-target="50000">0</div>
-                    <div class="stat-label">Patients Treated</div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-pulse"></span>
+                    <i class="fas fa-shield-alt"></i>
+                    <span>24/7 Advanced Emergency Care</span>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number" data-target="150">0</div>
-                    <div class="stat-label">Medical Experts</div>
+                <h1 class="hero-title">
+                    Your Health,<br>
+                    <span class="gradient-text">Our Priority</span>
+                </h1>
+                <p class="hero-desc">Experience world-class healthcare powered by cutting-edge AI diagnostics, robotic
+                    surgery, and a team of globally renowned specialists.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="openAppointmentModal()">
+                        <span>Book Appointment</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button class="btn btn-glass">
+                        <i class="fas fa-play-circle"></i>
+                        <span>Virtual Tour</span>
+                    </button>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number" data-target="98">0</div>
-                    <div class="stat-label">Success Rate %</div>
-                </div>
-            </div>
-        </div>
-        <div class="hero-visual">
-            <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=800&q=80" alt="Medical Team">
-                <div class="image-overlay"></div>
-            </div>
-            <div class="floating-badge badge-1">
-                <i class="fas fa-check-circle"></i>
-                <div>
-                    <strong>ISO Certified</strong>
-                    <span>Hospital</span>
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-user-check"></i></div>
+                        <div class="stat-content">
+                            <span class="stat-number" data-target="50000">0</span>
+                            <span class="stat-label">Patients Treated</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-user-md"></i></div>
+                        <div class="stat-content">
+                            <span class="stat-number" data-target="150">0</span>
+                            <span class="stat-label">Expert Doctors</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-trophy"></i></div>
+                        <div class="stat-content">
+                            <span class="stat-number" data-target="98">0</span>
+                            <span class="stat-label">Success Rate %</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="floating-badge badge-2">
-                <i class="fas fa-award"></i>
-                <div>
-                    <strong>Award Winning</strong>
-                    <span>Healthcare</span>
+            <div class="hero-visual">
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=800&q=80"
+                        alt="Medical Excellence">
+                    <div class="image-glow"></div>
+                </div>
+                <div class="floating-card card-1">
+                    <div class="card-icon"><i class="fas fa-check-circle"></i></div>
+                    <div class="card-content">
+                        <strong>ISO Certified</strong>
+                        <span>International Standards</span>
+                    </div>
+                </div>
+                <div class="floating-card card-2">
+                    <div class="card-icon"><i class="fas fa-robot"></i></div>
+                    <div class="card-content">
+                        <strong>AI Diagnostics</strong>
+                        <span>99.9% Accuracy</span>
+                    </div>
+                </div>
+                <div class="floating-card card-3">
+                    <div class="card-icon"><i class="fas fa-award"></i></div>
+                    <div class="card-content">
+                        <strong>Award Winning</strong>
+                        <span>Best Hospital 2024</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -100,71 +144,138 @@
     <section class="services" id="services">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Our Services</span>
-                <h2 class="section-title">Comprehensive Medical Care</h2>
+                <span class="section-tag"><i class="fas fa-stethoscope"></i> Our Specialties</span>
+                <h2 class="section-title">World-Class <span class="gradient-text">Medical Care</span></h2>
+                <p class="section-desc">Comprehensive healthcare solutions powered by innovation</p>
             </div>
             <div class="services-grid" id="servicesGrid"></div>
         </div>
     </section>
 
-    <!-- Departments Tabs -->
+    <!-- Departments Section -->
     <section class="departments" id="departments">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Hospital Departments</span>
-                <h2 class="section-title">Specialized Medical Units</h2>
+                <span class="section-tag"><i class="fas fa-hospital"></i> Departments</span>
+                <h2 class="section-title">Specialized <span class="gradient-text">Medical Units</span></h2>
             </div>
             <div class="dept-tabs">
-                <button class="dept-tab active" data-dept="emergency">Emergency</button>
-                <button class="dept-tab" data-dept="icu">ICU</button>
-                <button class="dept-tab" data-dept="surgery">Surgery</button>
-                <button class="dept-tab" data-dept="maternity">Maternity</button>
-                <button class="dept-tab" data-dept="radiology">Radiology</button>
+                <button class="dept-tab active" data-dept="emergency">
+                    <i class="fas fa-ambulance"></i>
+                    <span>Emergency</span>
+                </button>
+                <button class="dept-tab" data-dept="icu">
+                    <i class="fas fa-heartbeat"></i>
+                    <span>ICU</span>
+                </button>
+                <button class="dept-tab" data-dept="surgery">
+                    <i class="fas fa-procedures"></i>
+                    <span>Surgery</span>
+                </button>
+                <button class="dept-tab" data-dept="maternity">
+                    <i class="fas fa-baby"></i>
+                    <span>Maternity</span>
+                </button>
+                <button class="dept-tab" data-dept="radiology">
+                    <i class="fas fa-x-ray"></i>
+                    <span>Radiology</span>
+                </button>
             </div>
             <div class="dept-content" id="deptContent"></div>
         </div>
     </section>
 
-    <!-- Doctors Carousel -->
+    <!-- Doctors Section -->
     <section class="doctors" id="doctors">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Our Team</span>
-                <h2 class="section-title">World-Class Physicians</h2>
+                <span class="section-tag"><i class="fas fa-user-md"></i> Our Team</span>
+                <h2 class="section-title">Meet Our <span class="gradient-text">Expert Physicians</span></h2>
             </div>
-            <div class="doctors-slider">
-                <button class="slider-btn prev"><i class="fas fa-chevron-left"></i></button>
-                <div class="doctors-track" id="doctorsTrack"></div>
-                <button class="slider-btn next"><i class="fas fa-chevron-right"></i></button>
-            </div>
+            <div class="doctors-grid" id="doctorsGrid"></div>
         </div>
     </section>
 
-    <!-- Testimonials -->
+    <!-- Testimonials Section -->
     <section class="testimonials">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Patient Stories</span>
-                <h2 class="section-title">What Our Patients Say</h2>
+                <span class="section-tag"><i class="fas fa-quote-left"></i> Testimonials</span>
+                <h2 class="section-title">Patient <span class="gradient-text">Stories</span></h2>
             </div>
             <div class="testimonials-grid" id="testimonialsGrid"></div>
         </div>
     </section>
 
-    <!-- Emergency CTA -->
-    <div class="emergency-bar">
-        <div class="emergency-content">
-            <div class="emergency-pulse"></div>
-            <div>
-                <strong>24/7 Emergency Services</strong>
-                <span>Call now for immediate medical assistance</span>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-card">
+                <div class="cta-content">
+                    <h3>Need Immediate Medical Attention?</h3>
+                    <p>Our emergency team is available 24/7 with ambulance service</p>
+                </div>
+                <div class="cta-actions">
+                    <a href="tel:911" class="btn btn-emergency">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>Call 911</span>
+                    </a>
+                    <button class="btn btn-light" onclick="openAppointmentModal()">
+                        <span>Book Appointment</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
             </div>
         </div>
-        <a href="tel:911" class="emergency-btn">
-            <i class="fas fa-phone-alt"></i>
-            <span>Call 911</span>
-        </a>
-    </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <div class="logo-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <span class="logo-text">MediCare<span class="plus">+</span></span>
+                    </a>
+                    <p>Delivering excellence in healthcare since 1990. Your trusted partner for comprehensive medical
+                        solutions.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <a href="#">About Us</a>
+                    <a href="#">Our Services</a>
+                    <a href="#">Find a Doctor</a>
+                    <a href="#">Appointments</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Departments</h4>
+                    <a href="#">Cardiology</a>
+                    <a href="#">Neurology</a>
+                    <a href="#">Orthopedics</a>
+                    <a href="#">Pediatrics</a>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Medical Center Dr, NY 10001</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> hello@medicare.com</p>
+                    <p><i class="fas fa-clock"></i> 24/7 Emergency Services</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MediCare+. All rights reserved. | Privacy Policy | Terms of Service</p>
+            </div>
+        </div>
+    </footer>
 
     <!-- Appointment Modal -->
     <div class="modal" id="appointmentModal">
@@ -173,23 +284,55 @@
             <button class="modal-close" onclick="closeAppointmentModal()">
                 <i class="fas fa-times"></i>
             </button>
-            <h3>Book Appointment</h3>
-            <form class="appointment-form" onsubmit="handleAppointment(event)">
-                <div class="form-grid">
-                    <input type="text" placeholder="Full Name" required>
-                    <input type="email" placeholder="Email Address" required>
-                    <input type="tel" placeholder="Phone Number" required>
-                    <select required>
-                        <option value="">Select Department</option>
-                        <option>Cardiology</option>
-                        <option>Neurology</option>
-                        <option>Pediatrics</option>
-                        <option>Orthopedics</option>
-                    </select>
-                    <input type="date" required>
-                    <input type="time" required>
+            <div class="modal-header">
+                <div class="modal-icon">
+                    <i class="fas fa-calendar-check"></i>
                 </div>
-                <textarea placeholder="Describe your symptoms (optional)" rows="3"></textarea>
+                <h3>Book Your Appointment</h3>
+                <p>Schedule a visit with our expert physicians</p>
+            </div>
+            <form class="appointment-form" onsubmit="handleAppointment(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Full Name" required>
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Email Address" required>
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="tel" id="phone" placeholder="Phone Number" required>
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="form-group">
+                        <select id="department" required>
+                            <option value="">Select Department</option>
+                            <option>Cardiology</option>
+                            <option>Neurology</option>
+                            <option>Pediatrics</option>
+                            <option>Orthopedics</option>
+                            <option>General Medicine</option>
+                        </select>
+                        <i class="fas fa-hospital"></i>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="date" id="date" required>
+                        <i class="fas fa-calendar"></i>
+                    </div>
+                    <div class="form-group">
+                        <input type="time" id="time" required>
+                        <i class="fas fa-clock"></i>
+                    </div>
+                </div>
+                <div class="form-group full-width">
+                    <textarea id="symptoms" placeholder="Describe your symptoms (optional)" rows="3"></textarea>
+                    <i class="fas fa-notes-medical"></i>
+                </div>
                 <button type="submit" class="btn btn-primary btn-full">
                     <span>Confirm Appointment</span>
                     <i class="fas fa-check"></i>
