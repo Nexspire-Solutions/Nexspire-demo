@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexspire Estate - Luxury Real Estate</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <i class="fa-solid fa-gem"></i> Nexspire<span>Estate</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Properties</a></li>
+                    <li><a href="#">Agents</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <a href="#" class="btn btn-primary">Add Listing</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Find Your Dream Space</h1>
+            <p>Exclusive properties in prime locations for exclusive lifestyles.</p>
+
+            <div class="search-bar">
+                <select>
+                    <option value="">Property Type</option>
+                    <option value="house">House</option>
+                    <option value="apartment">Apartment</option>
+                    <option value="villa">Villa</option>
+                </select>
+                <select>
+                    <option value="">Location</option>
+                    <option value="ny">New York</option>
+                    <option value="la">Los Angeles</option>
+                    <option value="mi">Miami</option>
+                </select>
+                <select>
+                    <option value="">Price Range</option>
+                    <option value="1">$500k - $1M</option>
+                    <option value="2">$1M - $5M</option>
+                    <option value="3">$5M+</option>
+                </select>
+                <button class="btn btn-primary">Search Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Properties -->
+    <section class="properties">
+        <div class="container">
+            <div class="section-title">
+                <h2>Featured Residences</h2>
+                <p>Handpicked luxury properties from our exclusive portfolio.</p>
+            </div>
+
+            <div class="properties-grid">
+                <!-- Property 1 -->
+                <div class="property-card">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1613490493576-2f5037657911?q=80&w=800&auto=format&fit=crop"
+                            alt="Luxury Villa">
+                        <span class="price-tag">$4,500,000</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Beverly Hills Mansion</h3>
+                        <p class="location"><i class="fa-solid fa-location-dot"></i> 123 Palm Drive, Beverly Hills, CA
+                        </p>
+                        <div class="features">
+                            <span class="feature"><i class="fa-solid fa-bed"></i> 5 Beds</span>
+                            <span class="feature"><i class="fa-solid fa-bath"></i> 6 Baths</span>
+                            <span class="feature"><i class="fa-solid fa-ruler-combined"></i> 6,500 sqft</span>
+                        </div>
+                        <div class="agent-mini">
+                            <div class="agent-info">
+                                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=200&auto=format&fit=crop"
+                                    alt="Agent">
+                                <span>John Doe</span>
+                            </div>
+                            <a href="#" class="btn-text">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property 2 -->
+                <div class="property-card">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=800&auto=format&fit=crop"
+                            alt="Modern Apartment">
+                        <span class="price-tag">$2,100,000</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Manhattan Penthouse</h3>
+                        <p class="location"><i class="fa-solid fa-location-dot"></i> 55th Ave, New York, NY</p>
+                        <div class="features">
+                            <span class="feature"><i class="fa-solid fa-bed"></i> 3 Beds</span>
+                            <span class="feature"><i class="fa-solid fa-bath"></i> 2 Baths</span>
+                            <span class="feature"><i class="fa-solid fa-ruler-combined"></i> 2,200 sqft</span>
+                        </div>
+                        <div class="agent-mini">
+                            <div class="agent-info">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=200&auto=format&fit=crop"
+                                    alt="Agent">
+                                <span>Sarah Smith</span>
+                            </div>
+                            <a href="#" class="btn-text">Details</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Property 3 -->
+                <div class="property-card">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1600596542815-27b88e31e978?q=80&w=800&auto=format&fit=crop"
+                            alt="Seaside Villa">
+                        <span class="price-tag">$8,900,000</span>
+                    </div>
+                    <div class="card-content">
+                        <h3>Miami Beachfront</h3>
+                        <p class="location"><i class="fa-solid fa-location-dot"></i> 88 Ocean Blvd, Miami, FL</p>
+                        <div class="features">
+                            <span class="feature"><i class="fa-solid fa-bed"></i> 6 Beds</span>
+                            <span class="feature"><i class="fa-solid fa-bath"></i> 7 Baths</span>
+                            <span class="feature"><i class="fa-solid fa-ruler-combined"></i> 8,000 sqft</span>
+                        </div>
+                        <div class="agent-mini">
+                            <div class="agent-info">
+                                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop"
+                                    alt="Agent">
+                                <span>Michael Ross</span>
+                            </div>
+                            <a href="#" class="btn-text">Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>15+</h3>
+                    <p>Years Experience</p>
+                </div>
+                <div class="stat-item">
+                    <h3>200+</h3>
+                    <p>Awards Won</p>
+                </div>
+                <div class="stat-item">
+                    <h3>1200+</h3>
+                    <p>Properties Sold</p>
+                </div>
+                <div class="stat-item">
+                    <h3>99%</h3>
+                    <p>Happy Clients</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" style="padding: 100px 0; background: #fff;">
+        <div class="container">
+            <div class="row" style="display: flex; align-items: center; gap: 50px; flex-wrap: wrap;">
+                <div class="about-img" style="flex: 1; min-width: 300px;">
+                    <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=800&auto=format&fit=crop"
+                        alt="Interior"
+                        style="width: 100%; border-radius: 4px; box-shadow: 0 20px 40px rgba(0,0,0,0.1);">
+                </div>
+                <div class="about-content" style="flex: 1; min-width: 300px;">
+                    <h4
+                        style="color: #c5a47e; text-transform: uppercase; letter-spacing: 2px; font-size: 0.9rem; margin-bottom: 10px;">
+                        Our Story</h4>
+                    <h2
+                        style="font-size: 2.5rem; color: #1a1a1a; margin-bottom: 20px; font-family: 'Playfair Display', serif;">
+                        Redefining Luxury Real Estate</h2>
+                    <p style="color: #666; line-height: 1.8; margin-bottom: 30px;">
+                        For over 15 years, Nexspire Estate has been the bridge between discerning clients and the
+                        world's most exquisite properties. We believe that a home is more than just a place to live;
+                        it's a statement of your lifestyle and achievements.
+                    </p>
+                    <ul style="list-style: none; padding: 0; margin-bottom: 30px;">
+                        <li style="margin-bottom: 10px; color: #333;"><i class="fa-solid fa-check"
+                                style="color: #c5a47e; margin-right: 10px;"></i> Exclusive Portfolio Access</li>
+                        <li style="margin-bottom: 10px; color: #333;"><i class="fa-solid fa-check"
+                                style="color: #c5a47e; margin-right: 10px;"></i> Personalized Concierge Service</li>
+                        <li style="margin-bottom: 10px; color: #333;"><i class="fa-solid fa-check"
+                                style="color: #c5a47e; margin-right: 10px;"></i> Market Leading Expertise</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary"
+                        style="background: #1a1a1a; color: #fff; padding: 15px 30px; border: none; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; cursor: pointer; transition: 0.3s;">Learn
+                        More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" style="padding: 100px 0; background: #f9f9f9;">
+        <div class="container">
+            <div class="section-title text-center" style="text-align: center; margin-bottom: 60px;">
+                <h2
+                    style="font-size: 2.5rem; color: #1a1a1a; margin-bottom: 15px; font-family: 'Playfair Display', serif;">
+                    Our Premium Services</h2>
+                <p style="color: #666; max-width: 600px; margin: 0 auto;">Comprehensive real estate solutions tailored
+                    to your unique needs.</p>
+            </div>
+            <div class="services-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <!-- Service 1 -->
+                <div class="service-card"
+                    style="background: #fff; padding: 40px; text-align: center; border-radius: 4px; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                    <div class="icon" style="font-size: 3rem; color: #c5a47e; margin-bottom: 20px;">
+                        <i class="fa-solid fa-house-chimney"></i>
+                    </div>
+                    <h3
+                        style="font-size: 1.5rem; color: #1a1a1a; margin-bottom: 15px; font-family: 'Playfair Display', serif;">
+                        Buying a Home</h3>
+                    <p style="color: #666; line-height: 1.6;">Find your perfect sanctuary with our expert guidance and
+                        exclusive listings.</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="service-card"
+                    style="background: #fff; padding: 40px; text-align: center; border-radius: 4px; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                    <div class="icon" style="font-size: 3rem; color: #c5a47e; margin-bottom: 20px;">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                    </div>
+                    <h3
+                        style="font-size: 1.5rem; color: #1a1a1a; margin-bottom: 15px; font-family: 'Playfair Display', serif;">
+                        Selling Property</h3>
+                    <p style="color: #666; line-height: 1.6;">Maximize your property's value with our strategic
+                        marketing and negotiation.</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="service-card"
+                    style="background: #fff; padding: 40px; text-align: center; border-radius: 4px; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+                    <div class="icon" style="font-size: 3rem; color: #c5a47e; margin-bottom: 20px;">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+                    <h3
+                        style="font-size: 1.5rem; color: #1a1a1a; margin-bottom: 15px; font-family: 'Playfair Display', serif;">
+                        Real Estate Investing</h3>
+                    <p style="color: #666; line-height: 1.6;">Build wealth through smart property investments and
+                        portfolio management.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" style="padding: 100px 0; background: #1a1a1a; color: #fff;">
+        <div class="container">
+            <div class="section-title text-center" style="text-align: center; margin-bottom: 60px;">
+                <h2
+                    style="font-size: 2.5rem; color: #fff; margin-bottom: 15px; font-family: 'Playfair Display', serif;">
+                    Client Success Stories</h2>
+                <p style="color: #ccc; max-width: 600px; margin: 0 auto;">Read what our satisfied clients have to say
+                    about their experience.</p>
+            </div>
+            <div class="testimonials-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card"
+                    style="background: #2a2a2a; padding: 40px; border-radius: 4px; position: relative;">
+                    <div class="stars" style="color: #c5a47e; margin-bottom: 20px;">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p style="font-style: italic; color: #ddd; line-height: 1.6; margin-bottom: 20px;">"Nexspire Estate
+                        found us our dream villa in record time. Their attention to detail and professionalism is
+                        unmatched."</p>
+                    <div class="client-info" style="display: flex; align-items: center; gap: 15px;">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop"
+                            alt="Client" style="width: 50px; hieght: 50px; border-radius: 50%;">
+                        <div>
+                            <h4 style="margin: 0; font-size: 1rem;">James Wilson</h4>
+                            <span style="color: #c5a47e; font-size: 0.8rem;">Business Owner</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card"
+                    style="background: #2a2a2a; padding: 40px; border-radius: 4px; position: relative;">
+                    <div class="stars" style="color: #c5a47e; margin-bottom: 20px;">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p style="font-style: italic; color: #ddd; line-height: 1.6; margin-bottom: 20px;">"Selling our
+                        penthouse was seamless. The marketing strategy was brilliant and we got above asking price."</p>
+                    <div class="client-info" style="display: flex; align-items: center; gap: 15px;">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop"
+                            alt="Client" style="width: 50px; hieght: 50px; border-radius: 50%;">
+                        <div>
+                            <h4 style="margin: 0; font-size: 1rem;">Emily Davis</h4>
+                            <span style="color: #c5a47e; font-size: 0.8rem;">Architect</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card"
+                    style="background: #2a2a2a; padding: 40px; border-radius: 4px; position: relative;">
+                    <div class="stars" style="color: #c5a47e; margin-bottom: 20px;">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                            class="fa-solid fa-star"></i>
+                    </div>
+                    <p style="font-style: italic; color: #ddd; line-height: 1.6; margin-bottom: 20px;">"The best agency
+                        I've worked with. Transparent, honest, and truly dedicated to their client's needs."</p>
+                    <div class="client-info" style="display: flex; align-items: center; gap: 15px;">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop"
+                            alt="Client" style="width: 50px; hieght: 50px; border-radius: 50%;">
+                        <div>
+                            <h4 style="margin: 0; font-size: 1rem;">Robert Chen</h4>
+                            <span style="color: #c5a47e; font-size: 0.8rem;">Investor</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" style="padding: 100px 0; background: #fff;">
+        <div class="container">
+            <div class="row" style="display: flex; gap: 50px; flex-wrap: wrap;">
+                <div class="contact-form" style="flex: 1; min-width: 300px;">
+                    <div class="section-title">
+                        <h2
+                            style="font-size: 2.5rem; color: #1a1a1a; margin-bottom: 15px; font-family: 'Playfair Display', serif;">
+                            Schedule a Private Viewing</h2>
+                        <p style="color: #666; margin-bottom: 30px;">Interested in a property? Fill out the form below
+                            and an agent will contact you shortly.</p>
+                    </div>
+                    <form style="display: flex; flex-direction: column; gap: 20px;">
+                        <div class="form-group" style="display: flex; gap: 20px;">
+                            <input type="text" placeholder="First Name"
+                                style="flex: 1; padding: 15px; border: 1px solid #ddd; border-radius: 4px;">
+                            <input type="text" placeholder="Last Name"
+                                style="flex: 1; padding: 15px; border: 1px solid #ddd; border-radius: 4px;">
+                        </div>
+                        <input type="email" placeholder="Email Address"
+                            style="width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 4px;">
+                        <input type="tel" placeholder="Phone Number"
+                            style="width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 4px;">
+                        <textarea placeholder="Message / Property of Interest" rows="5"
+                            style="width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 4px;"></textarea>
+                        <button type="submit" class="btn btn-primary"
+                            style="background: #c5a47e; color: #fff; padding: 15px; border: none; text-transform: uppercase; font-weight: bold; cursor: pointer; transition: 0.3s; align-self: flex-start;">Send
+                            Request</button>
+                    </form>
+                </div>
+                <div class="contact-map"
+                    style="flex: 1; min-width: 300px; background: #eee; min-height: 400px; border-radius: 4px; position: relative; overflow: hidden;">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105750.22227494483!2d-118.41173249999999!3d34.0207289!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bc35fbd217ef%3A0xcf85e4805822550!2sBeverly%20Hills%2C%20CA%2C%20USA!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="footer-logo">Nexspire<span>Estate</span></a>
+                    <p>Leading the way in luxury real estate. We help you find not just a house, but a home that defines
+                        your lifestyle.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Agents</a></li>
+                        <li><a href="#">Latest News</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Properties</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Villas</a></li>
+                        <li><a href="#">Apartments</a></li>
+                        <li><a href="#">Office Space</a></li>
+                        <li><a href="#">Commercial</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Us</h4>
+                    <ul class="footer-links">
+                        <li><i class="fa-solid fa-location-dot"></i> 123 Business Ave, Suite 100</li>
+                        <li><i class="fa-solid fa-phone"></i> +1 (555) 123-4567</li>
+                        <li><i class="fa-solid fa-envelope"></i> contact@nexspire.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Nexspire Estate. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
